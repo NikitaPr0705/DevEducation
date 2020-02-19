@@ -1,17 +1,24 @@
-let testRate = 100;
+let testRate;
 
+function rateFunc(testRate) {
 if (testRate >= 0 && testRate <= 19) {
-  console.log('F');
+  return 'F';
 } else if (testRate >= 20 && testRate <= 39) {
-  console.log('E');
+  return 'E';
 } else if (testRate >= 40 && testRate <= 59) {
-  console.log('D');
+  return 'D';
 } else if (testRate >= 60 && testRate <= 74) {
-  console.log('C');
+  return 'C';
 } else if (testRate >= 75 && testRate <= 89) {
-  console.log('B');
+  return 'B';
 } else if (testRate >= 90 && testRate <= 100) {
-  console.log('A');
+  return 'A';
 } else {
-  console.log('Error');
+  return 'Error';
 }
+
+}
+
+console.log(rateFunc(70));
+
+window.rateFunc = rateFunc;

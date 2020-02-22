@@ -8,3 +8,4 @@ if (a % 2 === 0) {
   let sum = a + b;
   console.log(sum);
 }
+

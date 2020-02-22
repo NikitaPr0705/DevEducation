@@ -21,4 +21,4 @@ if (testRate >= 0 && testRate <= 19) {
 
 console.log(rateFunc(70));
 
-window.rateFunc = rateFunc;
+// window.rateFunc = rateFunc;

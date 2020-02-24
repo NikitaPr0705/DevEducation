@@ -1,11 +1,18 @@
 let a = 1;
 let b = 3;
 
-if (a % 2 === 0) {
-  let multiply = a * b;
-  console.log(multiply);
-} else {
-  let sum = a + b;
-  console.log(sum);
-}
+function countSumMult(a, b) {
+  if (a % 2 === 0) {
+    let result = a * b;
+    console.log(result);
+  } else {
+    let result = a + b;
+    console.log(result);
+  }
+};
+
+countSumMult(a, b);
+
+
+
 

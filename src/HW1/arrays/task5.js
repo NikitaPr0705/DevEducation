@@ -1,13 +1,15 @@
-let sumOfOdd = 0;
+
 let numbArray = [1, 4, 6, 7, 3, 8, 9, 2, 123, 65, 434];
 
-function coundOddIndex(numbArray) {
-    for(let i = 1; i < numbArray.length; i++)
-        if( numbArray[i] % 2 > 0) {
-            sumOfOdd += numbArray[i];
-            console.log(sumOfOdd);
-        } 
-        return sumOfOdd;
-}
+function countOddIndex(numbArray) {
+    let sumOfOddIndex = 0;
+    let i=0;
+        for (i=1; i<numbArray.length; i=i+2) {
+            sumOfOddIndex = sumOfOddIndex + numbArray[i];
+        }
+        return sumOfOddIndex;
+    }
 
-coundOddIndex(sumOfOdd);
+
+console.log(countOddIndex(numbArray));
+

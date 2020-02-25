@@ -1,18 +1,17 @@
-let a = 1;
-let b = 3;
+'use strict'
+let a1 = 1;
+let b1 = 3;
 
-function countSumMult(a, b) {
-  if (a % 2 === 0) {
-    let result = a * b;
-    console.log(result);
+
+
+function task1CountSumOrMult(a1, b1) {
+  let result1 = 0;
+  if (a1 % 2 === 0) {
+    result1 = a1 * b1;
   } else {
-    let result = a + b;
-    console.log(result);
+    result1 = a1 + b1;
   }
+  return result1;
 };
 
-countSumMult(a, b);
-
-
-
-
+task1CountSumOrMult(a1, b1);

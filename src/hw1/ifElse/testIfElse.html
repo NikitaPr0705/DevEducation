@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+  <!-- подключаем стили Mocha, для отображения результатов -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+  <!-- подключаем библиотеку Mocha -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+
+  <!-- настраиваем Mocha: предстоит BDD-тестирование -->
+  <script>
+    mocha.setup('bdd');
+  </script>
+  <!-- подключаем chai -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+  <!-- в chai есть много всего, выносим assert в глобальную область -->
+  <script>
+    var assert = chai.assert;
+  </script>
+
+  <script src="task1.js"></script>
+  <script src="task2.js"></script>
+  <script src="task3.js"></script>
+  <script src="task4.js"></script>
+  <script src="task5.js"></script>
+
+</head>
+
+<body>
+
+
+  <!-- в элементе с id="mocha" будут результаты тестов -->
+  <div id="mocha"></div>
+  <!-- запустить тесты! -->
+
+  <script>
+    describe("IfElse/task 1: умножение", function () {
+      it("Задание 1: Ввод а1 = 4 , b1 = 3", function () {
+        assert.equal(task1CountSumOrMult(4, 3), 12);
+      });
+      it("Задание 1: Ввод а1 = 8 , b1 = 8", function () {
+        assert.equal(task1CountSumOrMult(8, 8), 64);
+      });
+      it("Задание 1: Ввод а1 = 88 , b1 = 88", function () {
+        assert.equal(task1CountSumOrMult(88, 88), 7744);
+      });
+      it("Задание 1: Ввод а1 = 88 , b1 = 88", function () {
+        assert.equal(task1CountSumOrMult(88, 88), 7744);
+      });
+      it("Задание 1: Ввод а1 = -2 , b1 = 55", function () {
+        assert.equal(task1CountSumOrMult(-2, 55), -110);
+      });
+    });
+
+
+    describe("IfElse/task 1: сумма", function () {
+      it("Задание 1: Ввод а1 = 5  ,  b1 = 10", function () {
+        assert.equal(task1CountSumOrMult(5, 10), 15);
+      });
+      it("Задание 1: Ввод а1 = 11  ,  b1 = 10", function () {
+        assert.equal(task1CountSumOrMult(11, 10), 21);
+      });
+      it("Задание 1: Ввод а1 = 77 , b1 = 55", function () {
+        assert.equal(task1CountSumOrMult(77, 55), 132);
+      });
+      it("Задание 1: Ввод а1 = -1 , b1 = 55", function () {
+        assert.equal(task1CountSumOrMult(-1, 55), 54);
+      });
+    });
+
+    describe("IfElse/task 1: вводим в переменные строки", function () {
+      it("Задание 1: Ввод а1 = stringand  ,  b1 = 10", function () {
+        assert.equal(task1CountSumOrMult('stringand', 10), 'stringand10');
+      });
+      it("Задание 1: Ввод а1 = 11  ,  b1 = string", function () {
+        assert.equal(task1CountSumOrMult(11, 'string'), '11string');
+      });
+      it("Задание 1: Ввод а1 = '' , b1 = 10", function () {
+        assert.equal(task1CountSumOrMult('', 10), 0);
+      });
+    });
+
+    describe("IfElse/task 1: вводим в переменные null", function () {
+      it("Задание 1: Ввод а1 = null  ,  b1 = 10", function () {
+        assert.equal(task1CountSumOrMult(null, 10), 0);
+      });
+    });
+
+    describe("IfElse/task 1: вводим в переменные Object", function () {
+      it("Задание 1: Ввод а1 = {}  ,  b1 = 10", function () {
+        assert.equal(task1CountSumOrMult({}, 10), '[object Object]10');
+      });
+    });
+
+    describe("IfElse/task 1: вводим в переменные boolean", function () {
+      it("Задание 1: Ввод а1 = true  ,  b1 = 10", function () {
+        assert.equal(task1CountSumOrMult(true, 10), 11);
+      });
+      it("Задание 1: Ввод а1 = false  ,  b1 = 10", function () {
+        assert.equal(task1CountSumOrMult(false, 10), 0);
+      });
+      it("Задание 1: Ввод а1 = 11 , b1 = true", function () {
+        assert.equal(task1CountSumOrMult(11, true), 12);
+      });
+      it("Задание 1: Ввод а1 = 10 , b1 = true", function () {
+        assert.equal(task1CountSumOrMult(10, true), 10);
+      });
+      it("Задание 1: Ввод а1 = 11 , b1 = false", function () {
+        assert.equal(task1CountSumOrMult(11, false), 11);
+      });
+      it("Задание 1: Ввод а1 = 10 , b1 = false", function () {
+        assert.equal(task1CountSumOrMult(10, false), 0);
+      });
+      it("Задание 1: Ввод а1 = true , b1 = true", function () {
+        assert.equal(task1CountSumOrMult(true, true), 2);
+      });
+      it("Задание 1: Ввод а1 = false , b1 = false", function () {
+        assert.equal(task1CountSumOrMult(false, false), 0);
+      });
+      it("Задание 1: Ввод а1 = true , b1 = false", function () {
+        assert.equal(task1CountSumOrMult(true, false), 1);
+      });
+      it("Задание 1: Ввод а1 = false , b1 = true", function () {
+        assert.equal(task1CountSumOrMult(false, true), 0);
+      });
+
+    });
+
+
+
+
+
+
+
+    describe("IfElse/task 2: четверть", function () {
+      it("Задание 2: Ввод x = 2, y = 5", function () {
+        assert.equal(task2WhichQuarter(2, 5), "first quarter");
+      });
+      it("Задание 2: Ввод x = 2, y = -5", function () {
+        assert.equal(task2WhichQuarter(2, -5), "fourth quarter");
+      });
+      it("Задание 2: Ввод x = -2, y = 5", function () {
+        assert.equal(task2WhichQuarter(-2, 5), "second quarter");
+      });
+      it("Задание 2: Ввод x = -2, y = -5", function () {
+        assert.equal(task2WhichQuarter(-2, -5), "third quarter");
+      });
+    });
+
+    describe("IfElse/task 2: четверть, вводим строку", function () {
+      it("Задание 2: Ввод x = 'string', y = 5", function () {
+        assert.equal(task2WhichQuarter('string', 5), undefined);
+      });
+    });
+
+    describe("IfElse/task 2: четверть, вводим Boolean", function () {
+      it("Задание 2: Ввод x = true, y = 5", function () {
+        assert.equal(task2WhichQuarter(true, 5), "first quarter");
+      });
+      it("Задание 2: Ввод x = false, y = -5", function () {
+        assert.equal(task2WhichQuarter(false, -5), undefined);
+      });
+      it("Задание 2: Ввод x = false, y = 5", function () {
+        assert.equal(task2WhichQuarter(false, 5), undefined);
+      });
+      it("Задание 2: Ввод x = true, y = -5", function () {
+        assert.equal(task2WhichQuarter(true, -5), "fourth quarter");
+      });
+      it("Задание 2: Ввод x = true, y = true", function () {
+        assert.equal(task2WhichQuarter(true, true), "first quarter");
+      });
+      it("Задание 2: Ввод x = true, y = false", function () {
+        assert.equal(task2WhichQuarter(true, false), undefined);
+      });
+      it("Задание 2: Ввод x = false, y = false", function () {
+        assert.equal(task2WhichQuarter(false, false), undefined);
+      });
+    });
+
+    describe("IfElse/task 2: четверть, вводим null", function () {
+      it("Задание 2: Ввод x = null, y = 5", function () {
+        assert.equal(task2WhichQuarter(null, 5), undefined);
+      });
+    });
+
+
+
+
+
+
+    describe("IfElse/task 3: положительные числа", function () {
+      it("Задание 3: Ввод [3, 5, 2]", function () {
+        assert.equal(task3ArrayPosNum([3, 5, 2]), 10);
+      });
+      it("Задание 3: Ввод [-3, 5, 2]", function () {
+        assert.equal(task3ArrayPosNum([-3, 5, 2]), 7);
+      });
+      it("Задание 3: Ввод [3, -5, 2]", function () {
+        assert.equal(task3ArrayPosNum([3, -5, 2]), 5);
+      });
+      it("Задание 3: Ввод [-3, 5, -2]", function () {
+        assert.equal(task3ArrayPosNum([-3, 55, -2]), 55);
+      });
+      it("Задание 3: Ввод [3, 5, 2]", function () {
+        assert.equal(task3ArrayPosNum([-3, -55, -2]), 0);
+      });
+    });
+
+    describe("IfElse/task 3: положительные числа, вводим строки", function () {
+      it("Задание 3: Ввод ['string', 5, 2]", function () {
+        assert.equal(task3ArrayPosNum(['string', 5, 2]), 7);
+      });
+      it("Задание 3: Ввод ['string', 'string', 2]", function () {
+        assert.equal(task3ArrayPosNum(['string', 'string', 2]), 2);
+      });
+      it("Задание 3: Ввод ['string','string','string']", function () {
+        assert.equal(task3ArrayPosNum(['string', 'string', 'string']), 0);
+      });
+    });
+
+    describe("IfElse/task 3: положительные числа, вводим Boolean", function () {
+      it("Задание 3: Ввод [true, 5, 2]", function () {
+        assert.equal(task3ArrayPosNum([true, 5, 2]), 8);
+      });
+      it("Задание 3: Ввод [true, false, 2]", function () {
+        assert.equal(task3ArrayPosNum([true, false, 2]), 3);
+      });
+      it("Задание 3: Ввод [true, true, true]", function () {
+        assert.equal(task3ArrayPosNum([true, true, true]), 3);
+      });
+      it("Задание 3: Ввод [false, false, false]", function () {
+        assert.equal(task3ArrayPosNum([false, false, false]), 0);
+      });
+    });
+
+    describe("IfElse/task 3: положительные числа, вводим undefined", function () {
+      it("Задание 3: Ввод [undefined, 5, 2]", function () {
+        assert.equal(task3ArrayPosNum([undefined, 5, 2]), 7);
+      });
+      it("Задание 3: Ввод [undefined, undefined, undefined]", function () {
+        assert.equal(task3ArrayPosNum([undefined, undefined, undefined]), 0);
+      });
+    });
+
+
+
+
+
+    describe("IfElse/task 4: выражение макс(a*b*b, a+b+c)+3", function () {
+      it("Задание 4: Ввод (3, 4, 6)", function () {
+        assert.equal(task4CountMax(3, 4, 6), 75);
+      });
+      it("Задание 4: Ввод (1, 1, 1)", function () {
+        assert.equal(task4CountMax(1, 1, 1), 6);
+      });
+      it("Задание 4: Ввод (2, 2, 2)", function () {
+        assert.equal(task4CountMax(2, 2, 2), 11);
+      });
+      it("Задание 4: Ввод (2, 9, undefined)", function () {
+        assert.equal(task4CountMax(2, 9, undefined), undefined);
+      });
+      it("Задание 4: Ввод (2, NaN, 8)", function () {
+        assert.equal(task4CountMax(2, NaN, 8), undefined);
+      });
+      it("Задание 4: Ввод ({}, 9, 6)", function () {
+        assert.equal(task4CountMax({}, 9, 6), undefined);
+      });
+      it("Задание 4: Ввод ([], 9, 6)", function () {
+        assert.equal(task4CountMax([], 9, 6), 963);
+      });
+    });
+
+    describe("IfElse/task 4: выражение макс(a*b*b, a+b+c)+3, вводим Boolean", function () {
+      it("Задание 4: Ввод (3, 4, false)", function () {
+        assert.equal(task4CountMax(3, 4, false), 10);
+      });
+      it("Задание 4: Ввод (true, 4, 6)", function () {
+        assert.equal(task4CountMax(true, 4, 6), 27);
+      });
+    });
+
+
+    describe("IfElse/task 4: выражение макс(a*b*b, a+b+c)+3, вводим String", function () {
+      it("Задание 4: Ввод (5, 5, 'string')", function () {
+        assert.equal(task4CountMax(5, 5, 'string'), undefined);
+      });
+      it("Задание 4: Ввод ('string', 9, 6)", function () {
+        assert.equal(task4CountMax('string', 9, 6), undefined);
+      });
+    });
+
+
+
+
+
+
+    describe("IfElse/task 5: рейтинг оценок", function () {
+      it("Задание 4: Ввод 70", function () {
+        assert.equal(task5RateFunc(70), 'C');
+      });
+      it("Задание 4: Ввод 24", function () {
+        assert.equal(task5RateFunc(24), 'E');
+      });
+      it("Задание 4: Ввод -24", function () {
+        assert.equal(task5RateFunc(-24), 'Error, there number is too small');
+      });
+      it("Задание 4: Ввод 150", function () {
+        assert.equal(task5RateFunc(150), 'Error, there is too many');
+      });
+    });
+
+    describe("IfElse/task 5: рейтинг оценок, ввод string, undefined, NaN, Boolean, массив, объект", function () {
+      it("Задание 4: Ввод 'string'", function () {
+        assert.equal(task5RateFunc('string'), undefined);
+      });
+      it("Задание 4: Ввод true", function () {
+        assert.equal(task5RateFunc(true), 'F');
+      });
+      it("Задание 4: Ввод false", function () {
+        assert.equal(task5RateFunc(false), 'F');
+      });
+      it("Задание 4: Ввод undefined", function () {
+        assert.equal(task5RateFunc(undefined), undefined);
+      });
+      it("Задание 4: Ввод NaN", function () {
+        assert.equal(task5RateFunc(NaN), undefined);
+      });
+      it("Задание 4: Ввод []", function () {
+        assert.equal(task5RateFunc([]), 'F');
+      });
+      it("Задание 4: Ввод {}", function () {
+        assert.equal(task5RateFunc({}), undefined);
+      });
+    });
+  </script>
+
+
+
+  <script>
+    mocha.run();
+  </script>
+
+</body>
+
+</html>

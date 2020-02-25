@@ -1,13 +1,13 @@
-let arr = [3,5,-2];
+let arr3 = [-3, 5, 2];
 
-function arrayPosNum(array) {
-    let sum = 0;
-    for (let i = 0; i < array.length; i++) {
-        if (arr[i] > 0) {
-            let positive = arr[i];
-            sum += positive;
+function task3ArrayPosNum(arr3) {
+    let sum3 = 0;
+    for (let i = 0; i < arr3.length; i++) {
+        if (arr3[i] > 0) {
+            let positive3 = arr3[i];
+            sum3 += positive3;
         }
     }
-    console.log(sum);
+    return sum3;
 }
-arrayPosNum(arr);
+task3ArrayPosNum(arr3);

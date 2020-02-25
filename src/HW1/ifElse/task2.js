@@ -1,10 +1,10 @@
 let first = "first quarter";
 let second = "second quarter";
 let third = "third quarter";
-let four = "four quarter";
+let fourth = "fourth quarter";
 
 
-function whichQuarter(x, y) {
+function task2WhichQuarter(x, y) {
   if (x > 0 && y > 0) {
     return first;
   }
@@ -15,8 +15,8 @@ function whichQuarter(x, y) {
     return third;
   }
   if (x > 0 && y < 0) {
-    return four;
+    return fourth;
   }
 };
 
-whichQuarter(2, 5);
+task2WhichQuarter(2, 5);

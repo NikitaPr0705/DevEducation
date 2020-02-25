@@ -1,10 +1,13 @@
 let numb = 12345;
-function reverseNumb(numb) {
-    let numbStr = String(numb);
-    let strSplit = numbStr.split('');
-    let reverseStr = strSplit.reverse();
-    let joinStr = +reverseStr.join('');
-    console.log(joinStr);
+
+function task6ReverseNumb(numb) {
+    let numbStr = numb.toString();
+    let numbStrResult = [];
+    for (let i = numbStr.length - 1; i >= 0; i--) {
+        numbStrResult += numbStr[i];
+        numbStrResult = +numbStrResult;
+    };
+    return numbStrResult;
 }
 
-reverseNumb(numb);
+task6ReverseNumb(numb);

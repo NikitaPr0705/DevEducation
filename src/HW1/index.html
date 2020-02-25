@@ -1,85 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-<!-- подключаем стили Mocha, для отображения результатов -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
-  <!-- подключаем библиотеку Mocha -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
-
-  <!-- настраиваем Mocha: предстоит BDD-тестирование -->
-<script>
-    mocha.setup('bdd');
-</script>
-  <!-- подключаем chai -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
-  <!-- в chai есть много всего, выносим assert в глобальную область -->
-<script>
-    var assert = chai.assert;
-</script>
-
-<script src="ifElse/task1.js"></script>
-<script src="ifElse/task5.js"></script>
-<script src="loops/task2.js"></script>
-<script src="loops/task4.js"></script>
-
-
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <title>Document</title>
 </head>
+
 <body>
+  <style>
+    div {
+      font-family: 'Roboto', sans-serif;
+      width: 70%;
+      margin: 0 auto;
+      font-size: 30px;
+      border: 1px solid #221f1f;
+    }
 
+    p {
+      text-align: center;
+    }
 
-     <!-- в элементе с id="mocha" будут результаты тестов -->
-<div id="mocha"></div>
-<!-- запустить тесты! -->
-<script>
-  function sum(a,b) {
-    return a+b;
-  }
-    describe("sum",function() {
-        it("Задание 1: передаем а= 5  и  б=10",function() {
-            assert.equal(sum(5,10),15);
-
-    });
-});
-
-
-
- function mult(a,b) {
-     return a*b;
- }
-    describe("mult", function() {
-        it("Задание 1: передаем а= 4  и  б=3", function() {
-            assert.equal(mult(4,3), 12);
-        });
-    });
-
-  
-  describe("rateFunc", function() {
-    it("Задание 5: Ввод 70, должно вывести С", function() {
-      assert.equal(rateFunc(70), "C");
-    });
-  });
-
-
-describe("getSimpleNum", function() {
-  it("Задание 2: Ввод 19, должно вывести 'Simple'", function() {
-    assert.equal(getSimpleNum(19), 'Simple');
-  })
-})
-
-</script>
-
-
-
-
-<script>
-  mocha.run();
-</script>
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  </style>
+  <div>
+    <p><a href="./arrays/testArrays.html">Ссылка на тесты Arrays</a></p>
+    <p><a href="./function/testFunctions.html">Ссылка на тесты Functions</a></p>
+    <p><a href="./ifElse/testIfElse.html">Ссылка на тесты IfElse</a></p>
+    <p><a href="./loops/testsLoops.html">Ссылка на тесты Loops</a></p>
+  </div>
 
 </body>
+
 </html>

@@ -1,4 +1,5 @@
 'use strict'
+
 function task4CountMax(a, b, c) {
     let sum = a + b + c;
     let multiple = a * b * c;

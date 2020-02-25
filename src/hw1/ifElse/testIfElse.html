@@ -315,25 +315,25 @@
     });
 
     describe("IfElse/task 5: рейтинг оценок, ввод string, undefined, NaN, Boolean, массив, объект", function () {
-      it("Задание 4: Ввод 'string'", function () {
+      it("Задание 5: Ввод 'string'", function () {
         assert.equal(task5RateFunc('string'), undefined);
       });
-      it("Задание 4: Ввод true", function () {
+      it("Задание 5: Ввод true", function () {
         assert.equal(task5RateFunc(true), 'F');
       });
-      it("Задание 4: Ввод false", function () {
+      it("Задание 5: Ввод false", function () {
         assert.equal(task5RateFunc(false), 'F');
       });
-      it("Задание 4: Ввод undefined", function () {
+      it("Задание 5: Ввод undefined", function () {
         assert.equal(task5RateFunc(undefined), undefined);
       });
-      it("Задание 4: Ввод NaN", function () {
+      it("Задание 5: Ввод NaN", function () {
         assert.equal(task5RateFunc(NaN), undefined);
       });
-      it("Задание 4: Ввод []", function () {
+      it("Задание 5: Ввод []", function () {
         assert.equal(task5RateFunc([]), 'F');
       });
-      it("Задание 4: Ввод {}", function () {
+      it("Задание 5: Ввод {}", function () {
         assert.equal(task5RateFunc({}), undefined);
       });
     });

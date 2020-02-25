@@ -1,11 +1,11 @@
-function countSumOfNum(num) {
+function task5CountSumOfNum(num) {
 
     let numToStr = num.toString();
     let sumOfNumbers = 0;
-    for(let i = 0; i < numToStr.length; i++) {
-    sumOfNumbers += Number(numToStr[i]);
-}
-return sumOfNumbers;
+    for (let i = 0; i < numToStr.length; i++) {
+        sumOfNumbers += Number(numToStr[i]);
+    }
+    return sumOfNumbers;
 }
 
-countSumOfNum(234454);
+task5CountSumOfNum(234454);

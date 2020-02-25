@@ -13,6 +13,7 @@ let variable1 = '';
 let variable2 = '';
 let operator = '';
 let isOperClicked = false;
+let isDotClicked = true;
 displayValue.value = '0';
 
 
@@ -113,16 +114,16 @@ function equality(operation) {
   let resultOfOperation;
   switch (operation) {
     case '+':
-      resultOfOperation = sum(variable1, variable2);
+      resultOfOperation = calcSum(variable1, variable2);
       break;
     case '-':
-      resultOfOperation = substr(variable1, variable2);
+      resultOfOperation = calcSubstr(variable1, variable2);
       break;
     case '*':
-      resultOfOperation = multiple(variable1, variable2);
+      resultOfOperation = calcMultiple(variable1, variable2);
       break;
     case '/':
-      resultOfOperation = divide(variable1, variable2);
+      resultOfOperation = calcDivide(variable1, variable2);
       break;
   };
   isOperClicked = false;
@@ -132,18 +133,18 @@ function equality(operation) {
   return resultOfOperation;
 }
 
-function sum(variable1, variable2) {
+function calcSum(variable1, variable2) {
   return variable1 + variable2;
 };
 
-function substr(variable1, variable2) {
+function calcSubstr(variable1, variable2) {
   return variable1 - variable2;
 };
 
-function multiple(variable1, variable2) {
+function calcMultiple(variable1, variable2) {
   return variable1 * variable2;
 };
 
-function divide(variable1, variable2) {
+function calcDivide(variable1, variable2) {
   return variable1 / variable2;
 };

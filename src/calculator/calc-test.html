@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- подключаем стили Mocha, для отображения результатов -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+    <!-- подключаем библиотеку Mocha -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+
+    <!-- настраиваем Mocha: предстоит BDD-тестирование -->
+    <script>
+        mocha.setup('bdd');
+    </script>
+    <!-- подключаем chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+    <!-- в chai есть много всего, выносим assert в глобальную область -->
+    <script>
+        var assert = chai.assert;
+    </script>
+
+    <script src="calc.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+    <!-- в элементе с id="mocha" будут результаты тестов -->
+    <div id="mocha"></div>
+    <!-- запустить тесты! -->
+
+    <script>
+        describe('Операция сложения', function () {
+            it('Вводим 2 и 3', function () {
+                assert.equal(calcSum(2, 3), 5);
+            });
+            it('Вводим 20 и 3', function () {
+                assert.equal(calcSum(20, 3), 23);
+            });
+            it('Вводим -20 и 3', function () {
+                assert.equal(calcSum(-20, 3), -17);
+            });
+            it('Вводим -20 и -3', function () {
+                assert.equal(calcSum(-20, -3), -23);
+            });
+            it('Вводим 20 и -3', function () {
+                assert.equal(calcSum(20, -3), 17);
+            });
+            it('Вводим 20.31 и 30.12', function () {
+                assert.equal(calcSum(20.31, 30.12), 50.43);
+            });
+            it('Вводим 0 и 0', function () {
+                assert.equal(calcSum(0, 0), 0);
+            });
+        });
+
+        describe('Операция вычитания', function () {
+            it('Вводим 2 и 3', function () {
+                assert.equal(calcSubstr(2, 3), -1);
+            });
+            it('Вводим 20 и 3', function () {
+                assert.equal(calcSubstr(20, 3), 17);
+            });
+            it('Вводим -20 и 3', function () {
+                assert.equal(calcSubstr(-20, 3), -23);
+            });
+            it('Вводим -45 и -30', function () {
+                assert.equal(calcSubstr(-45, -30), -15);
+            });
+            it('Вводим 20 и -3', function () {
+                assert.equal(calcSubstr(20, -3), 23);
+            });
+            it('Вводим 200.31 и 30.12', function () {
+                assert.equal(calcSubstr(200.31, 30.12), 170.19);
+            });
+            it('Вводим 0 и 0', function () {
+                assert.equal(calcSubstr(0, 0), 0);
+            });
+        });
+
+        describe('Операция умножения', function () {
+            it('Вводим 2 и 3', function () {
+                assert.equal(calcMultiple(2, 3), 6);
+            });
+            it('Вводим -20 и 3', function () {
+                assert.equal(calcMultiple(-20, 3), -60);
+            });
+            it('Вводим -25 и -4', function () {
+                assert.equal(calcMultiple(-25, -4), 100);
+            });
+            it('Вводим -10.33 и -123.3', function () {
+                assert.equal(calcMultiple(-10.33, -123.3), 1273.689);
+            });
+            it('Вводим 20.31 и 30.12', function () {
+                assert.equal(calcMultiple(20.31, 30.12), 611.7372);
+            });
+            it('Вводим 20.31 и 0', function () {
+                assert.equal(calcMultiple(20.31, 0), 0);
+            });
+        });
+
+        describe('Операция деления', function () {
+            it('Вводим 2 и 3', function () {
+                assert.equal(calcDivide(2, 3), 0.6666666666666666);
+            });
+            it('Вводим 20 и 3', function () {
+                assert.equal(calcDivide(20, 3), 6.666666666666667);
+            });
+            it('Вводим -200 и 4', function () {
+                assert.equal(calcDivide(-200, 4), -50);
+            });
+            it('Вводим -250 и -5', function () {
+                assert.equal(calcDivide(-250, -5), 50);
+            });
+            it('Вводим 123.5 и -34', function () {
+                assert.equal(calcDivide(123.5, -34), -3.6323529411764706);
+            });
+            it('Вводим 50 и 2', function () {
+                assert.equal(calcDivide(50, 2), 25);
+            });
+            it('Вводим 0 и 2', function () {
+                assert.equal(calcDivide(0, 2), 0);
+            });
+        });
+    </script>
+
+
+
+    <script>
+        mocha.run();
+    </script>
+
+</body>
+
+</html>

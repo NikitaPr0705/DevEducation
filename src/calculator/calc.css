@@ -5,8 +5,11 @@
 }
 
 .calculator {
+    display: -webkit-box;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
     margin: 0 auto;
     border: 1px solid black;
     width: 100%;
@@ -15,12 +18,13 @@
 }
 
 .calc-row {
+    display: -webkit-box;
     display: flex;
 }
 
 .calc-row-input {
     width: 100%;
-    
+
 }
 
 .form {
@@ -28,7 +32,10 @@
 }
 
 .calc-screen {
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     background-color: #1B262A;
     color: white;
     border: none;
@@ -69,7 +76,7 @@
     background-color: #DCDCDC;
     width: 25%;
     margin: 0;
-    
+
 }
 
 .clear {

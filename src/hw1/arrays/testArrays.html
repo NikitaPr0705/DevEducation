@@ -1,1 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+  <!-- подключаем стили Mocha, для отображения результатов -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+  <!-- подключаем библиотеку Mocha -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+
+  <!-- настраиваем Mocha: предстоит BDD-тестирование -->
+  <script>
+    mocha.setup('bdd');
+  </script>
+  <!-- подключаем chai -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+  <!-- в chai есть много всего, выносим assert в глобальную область -->
+  <script>
+    var assert = chai.assert;
+  </script>
+
+  <script src="task1.js"></script>
+  <script src="task2.js"></script>
+  <script src="task3.js"></script>
+  <script src="task4.js"></script>
+  <script src="task5.js"></script>
+  <script src="task6.js"></script>
+  <script src="task7.js"></script>
+  <script src="task8.js"></script>
+  <script src="task9.js"></script>
+  <script src="task10.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+  <!-- в элементе с id="mocha" будут результаты тестов -->
+  <div id="mocha"></div>
+  <!-- запустить тесты! -->
+
+  <script>
+    describe("Arrays/task 1: найти минимальный элемент массива (+ ввод Boolean, Arrays, Infinity)", function () {
+      it("Задание 1: Ввод [29, 10, 2, 3, 4, 5, 6, 7, 8]", function () {
+        assert.equal(task1FindMinNum([29, 10, 2, 3, 4, 5, 6, 7, 8]), 2);
+      });
+      it("Задание 1: Ввод [29, 10, 4, 5, 6, 7, 8]", function () {
+        assert.equal(task1FindMinNum([29, 10, 4, 5, 6, 7, 8]), 4);
+      });
+      it("Задание 1: Ввод [29, 10, true, 5, 6, 7, 8]", function () {
+        assert.equal(task1FindMinNum([29, 10, true, 5, 6, 7, 8]), true);
+      });
+      it("Задание 1: Ввод [29, 10, true, 5, 6, false, 8]", function () {
+        assert.equal(task1FindMinNum([29, 10, true, 5, 6, false, 8]), false);
+      });
+      it("Задание 1: Ввод [29, 10, [], 5, 6, 7, 8]", function () {
+        assert.equal(task1FindMinNum([29, 10, [], 5, 6, 7, 8]), 0);
+      });
+      it("Задание 1: Ввод [29, 10, -4, 5, 6, 7, 8]", function () {
+        assert.equal(task1FindMinNum([29, 10, -4, 5, 6, 7, 8]), -4);
+      });
+      it("Задание 1: Ввод [29, 10, Infinity, 5, 6, 7, 8]", function () {
+        assert.equal(task1FindMinNum([29, 10, Infinity, 5, 6, 7, 8]), 5);
+      });
+    });
+
+
+    describe("Arrays/task 2: найти максимальный элемент массива (+ ввод Boolean, Arrays, Infinity)", function () {
+      it("Задание 2: Ввод [29, 10, 2, 3, 4, 5, 6, 7, 8]", function () {
+        assert.equal(task2FindMaxNum([29, 10, 2, 3, 4, 5, 6, 7, 8]), 29);
+      });
+      it("Задание 2: Ввод [29, 10, 34, 5, 6, 7, 8]", function () {
+        assert.equal(task2FindMaxNum([29, 10, 34, 5, 6, 7, 8]), 34);
+      });
+      it("Задание 2: Ввод [29, 10, true, 5, 6, 7, 8]", function () {
+        assert.equal(task2FindMaxNum([29, 10, true, 5, 6, 7, 8]), 29);
+      });
+      it("Задание 2: Ввод [29, 10, true, 5, 6, false, 8]", function () {
+        assert.equal(task2FindMaxNum([29, 10, true, 5, 6, false, 8]), 29);
+      });
+      it("Задание 2: Ввод [29, 10, [], 5, 6, 7, 8]", function () {
+        assert.equal(task2FindMaxNum([29, 10, [], 5, 6, 7, 8]), 29);
+      });
+      it("Задание 2: Ввод [-29, 10, -4, 5, 6, 7, -8]", function () {
+        assert.equal(task2FindMaxNum([-29, 10, -4, 5, 6, 7, -8]), 10);
+      });
+      it("Задание 2: Ввод [29, 10, Infinity, 5, 6, 7, 8]", function () {
+        assert.equal(task2FindMaxNum([29, 10, Infinity, 5, 6, 7, 8]), Infinity);
+      });
+    });
+
+
+    describe("Arrays/task 3: найти индекс минимального элемента массива (+ ввод Boolean, Arrays, Infinity)",
+      function () {
+        it("Задание 3: Ввод [11, 8, 10, 3, 1, 5, 6, 7, 16]", function () {
+          assert.equal(task3FindIndexMinElem([11, 8, 10, 3, 1, 5, 6, 7, 16]), 4);
+        });
+        it("Задание 3: Ввод [11, 8, 10, 3, 1, 5, 6, 7, -16]", function () {
+          assert.equal(task3FindIndexMinElem([11, 8, 10, 3, 1, 5, 6, 7, -16]), 8);
+        });
+        it("Задание 3: Ввод [11, 8, true, 10, 3, 112, 5, 6, 7, 16]", function () {
+          assert.equal(task3FindIndexMinElem([11, 8, 2, true, 3, 112, 5, 6, 7, 16]), -1);
+        });
+        it("Задание 3: Ввод [11, 8, false, 10, 3, 112, 5, 6, 7, 16]", function () {
+          assert.equal(task3FindIndexMinElem([11, 8, false, 10, 3, 112, 5, 6, 7, 16]), -1);
+        });
+        it("Задание 3: Ввод [11, 8, 45, 10, [], 112, 5, 6, 7, 16]", function () {
+          assert.equal(task3FindIndexMinElem([11, 8, 45, 10, [], 112, 5, 6, 7, 16]), -1);
+        });
+        it("Задание 3: Ввод [11, 8, 45, 10, Infinity, 112, 5, 6, 7, 16]", function () {
+          assert.equal(task3FindIndexMinElem([11, 8, 45, 10, Infinity, 112, 5, 6, 7, 16]), 6);
+        });
+        it("Задание 3: Ввод", function () {
+          assert.equal(task3FindIndexMinElem([29, 10, Infinity, 5, 6, 7, 8]), 3);
+        });
+      });
+
+    describe("Arrays/task 4: найти индекс максимального элемента массива (+ ввод Boolean, Arrays, Infinity)",
+      function () {
+        it("Задание 4: Ввод [29, 10, 2, 3, 4, 5, 6, 7, 8]", function () {
+          assert.equal(task4FindIndexMaxElem([29, 10, 2, 3, 4, 5, 6, 7, 8]), 0);
+        });
+        it("Задание 4: Ввод [29, 10, 34, 5, 6]", function () {
+          assert.equal(task4FindIndexMaxElem([29, 10, 34, 5, 6]), 2);
+        });
+        it("Задание 4: Ввод [0, true]", function () {
+          assert.equal(task4FindIndexMaxElem([0, true]), -1);
+        });
+        it("Задание 4: Ввод [false]", function () {
+          assert.equal(task4FindIndexMaxElem([false]), -1);
+        });
+        it("Задание 4: Ввод [[35, 45]]", function () {
+          assert.equal(task4FindIndexMaxElem([
+            [35, 45]
+          ]), -1);
+        });
+        it("Задание 4: Ввод [[]]", function () {
+          assert.equal(task4FindIndexMaxElem([
+            []
+          ]), -1);
+        });
+        it("Задание 4: Ввод [29, 10, Infinity, 5, 6, 7, 8]", function () {
+          assert.equal(task4FindIndexMaxElem([29, 10, Infinity, 5, 6, 7, 8]), 2);
+        });
+      });
+
+    describe("Arrays/task 5: посчитать сумму элементов массива с нечетными индексами (+ ввод Boolean, Infinity)",
+      function () {
+        it("Задание 5: Ввод [1, 4, 6, 7, 3, 8, 9, 2, 123, 65, 434]", function () {
+          assert.equal(task5CountOddIndex([1, 4, 6, 7, 3, 8, 9, 2, 123, 65, 434]), 86);
+        });
+        it("Задание 5: Ввод [1, 4, 6, 7, 3, 8, 9, 2, 123, 65, 434]", function () {
+          assert.equal(task5CountOddIndex([1, 4, 6, true, 3, 8, 9, 2, 123, 65, 434]), 80);
+        });
+        it("Задание 5: Ввод [1, 4, 6, -3, 8, -9, 2, 123, 65, 434]", function () {
+          assert.equal(task5CountOddIndex([1, 4, 6, -3, 8, -9, 2, 123, 65, 434]), 549);
+        });
+        it("Задание 5: Ввод [1, 4, 6, -3, 8, -9, 2, Infinity, 65, 434]", function () {
+          assert.equal(task5CountOddIndex([1, 4, 6, -3, 8, -9, 2, Infinity, 65, 434]), Infinity);
+        });
+      });
+
+    describe("Arrays/task 6: реверс массива", function () {
+      it("Задание 6: Ввод [11, 5, 2, 3, 8, 1, 6, 7, 16]", function () {
+        assert.deepEqual(task6ReverseArray([11, 5, 2, 3, 8, 1, 6, 7, 16]), [16, 7, 6, 1, 8, 3, 2, 5, 11]);
+      });
+      it("Задание 6: Ввод [1, 4, 6, true, 3, 8, 9, 2, 123, 65, 434]", function () {
+        assert.deepEqual(task6ReverseArray([1, 4, 6, true, 3, 8, 9, 2, 123, 65, 434]), [434, 65, 123, 2, 9, 8,
+          3, true, 6, 4, 1
+        ]);
+      });
+    });
+
+    describe("Arrays/task 7: посчитать количество нечетных элементов массива", function () {
+      it("Задание 7: Ввод [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]", function () {
+        assert.equal(task7CountOddElemOfArr([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 5);
+      });
+      it("Задание 7: Ввод 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, true]", function () {
+        assert.equal(task7CountOddElemOfArr([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, true, true, true, true]), 8);
+      });
+      it("Задание 7: Ввод 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, undefined, undefined, undefined, undefined]", function () {
+        assert.equal(task7CountOddElemOfArr([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, undefined, undefined, undefined,
+          undefined
+        ]), 8);
+      });
+      it("Задание 7: Ввод 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, [], [], [], []]", function () {
+        assert.equal(task7CountOddElemOfArr([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, [],
+          [],
+          [],
+          []
+        ]), 5);
+      });
+    });
+
+    describe("Arrays/task 8: поменять местами половины массивов", function () {
+      it("Задание 8: Ввод [1, 2, 3, 4, 5, 6]", function () {
+        assert.deepEqual(task8HalfOfArr([1, 2, 3, 4, 5, 6]), [4, 5, 6, 1, 2, 3]);
+      });
+      it("Задание 8: Ввод 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]", function () {
+        assert.deepEqual(task8HalfOfArr([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]), [7, 8, 9, 10, 11, 6, 1, 2, 3, 4,
+          5
+        ]);
+      });
+    });
+  </script>
+
+
+
+  <script>
+    mocha.run();
+  </script>
+
+</body>
+
+</html>

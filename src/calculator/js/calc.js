@@ -50,6 +50,7 @@ function clickOnClearButton(event) {
   displayValue.value = '0';
   operator = '';
   isOperClicked = false;
+  isDotClicked = true;
   console.log('clickOnClearButton');
 }
 
@@ -68,7 +69,7 @@ function numberClick(event) {
     displayValue.value = variable1;
     operator = event.target.value;
   } else if (isOperClicked === true && variable2.length < 10) {
-    displayValue.value = '0'
+    displayValue.value = '0';
     variable2 += event.target.value;
     displayValue.value = variable2;
   };
@@ -77,12 +78,20 @@ function numberClick(event) {
 }
 
 function clickOnDot(event) {
-  if (isOperClicked === false) {
+if (isOperClicked === false) {
+  if(isDotClicked ===  true && variable1.includes(".")) {
+    dotButton = false;
+  }
     variable1 += event.target.value;
     displayValue.value = variable1;
-  } else if (isOperClicked === true) {
+    dotButton = true;
+  } else if (isOperClicked === true && isDotClicked === true) {
+    isDotClicked = false;
     variable2 += event.target.value;
     displayValue.value = variable2;
+  } else if(variable2.includes('.')) {
+    dotButton = false;
+    isDotClicked = false;
   }
   console.log('var1 : ', variable1, 'var2 : ', variable2);
 }
@@ -106,7 +115,6 @@ function clickOnEqual(event) {
     displayValue.value = equality(operator);
   }
 };
-
 
 
 // logic operations

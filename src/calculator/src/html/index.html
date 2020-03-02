@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Copy Me</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+
+ <section class="calculator">
+        <div class="calc-row-input">
+            <form name="form" class="form">
+                <input class="calc-screen" type="text" name="textview" id='viewinput' value="" disabled>
+            </form>
+        </div>
+        <div class="calc-keys">
+            <div class="calc-row">
+                <input type="button" id="buttonClear" class="clear" value="AC">
+                <input type="button" id="buttonDivide" class="operator divide" value="/">
+            </div>
+            <div class="calc-row">
+                <input type="button" id="button7" value="7" class="number">
+                <input type="button" id="button8" value="8" class="number">
+                <input type="button" id="button9" value="9" class="number">
+                <input type="button" id="buttonMultiply" class="operator multiply" value="*">
+            </div>
+            <div class="calc-row">
+                <input type="button" id="button4" value="4" class="number">
+                <input type="button" id="button5" value="5" class="number">
+                <input type="button" id="button6" value="6" class="number">
+                <input type="button" id="buttonMinus" class="operator substriction" value="-">
+            </div>
+            <div class="calc-row">
+                <input type="button" id="button1" value="1" class="number">
+                <input type="button" id="button2" value="2" class="number">
+                <input type="button" id="button3" value="3" class="number">
+                <input type="button" id="buttonPlus" class="operator plus" value="+">
+            </div>
+            <div class="calc-row">
+                <input type="button" id="button0" value="0" class="number zero">
+                <input type="button" id="buttonDot" class="dot" value=".">
+                <input type="button" id="buttonEqual" class="equal" value="=">
+            </div>
+        </div>
+    </section>
+	<!-- @@include('./section1.html') -->
+	<!-- @@include('./section2.html') -->
+
+	<!-- Scripts -->
+	<script src="js/index.js"></script>
+</body>
+</html>

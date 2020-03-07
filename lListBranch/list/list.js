@@ -61,9 +61,9 @@ List.prototype.reverse = function() {
 List.prototype.halfReverse = function() {
 }
 
-module.exports = List;
+module.exports.List = List;
 
-const asd = new AList([1, 2, 3, 4, 5, 6, 7])
+// const asd = new LList([1, 2, 3, 4, 5, 6, 7])
 // const dfg = new AList([78, 4, 555555, 77, 54553, 3, 55, 342, 4556, 334343434])
 
 

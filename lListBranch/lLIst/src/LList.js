@@ -1,15 +1,15 @@
 'use strict'
 
-const List = require('../list/list.js');
-const Node = require('./node.js');
+const List = require('../../list/list').List;
+const Node = require('../../node/node.js').Node;
 
 function LList (element) {
-    List.apply(this);
+    List.apply(this, arguments);// обращение к функции-конструктору родителя и достает все свойства и аргументы
 
     this.length = 0; // количество элементов списка // можно назвать length
     this.root = null; // входная точка, которая ссылается на первую ноду
     this.defaultValue = element;
-    this.init(element);
+    this.init();
 };
 
 module.exports = LList;
@@ -29,6 +29,7 @@ LList.prototype.addStart = function(value) {
 LList.prototype.init = function() {
     let i = 0;
     while(this.defaultValue[i] !== undefined) {
+        debugger
         this.addStart(this.defaultValue[i]);
         i++;
     }
@@ -40,9 +41,15 @@ LList.prototype.size = function() {
 
 LList.prototype.addEnd = function(value) {
     const newNode = new Node(value);
-    newNode.next = null;
-    this.root = newNode;
+    let tempNode = this.root;
+    while(tempNode.next !== null) {
+        tempNode = tempNode.next;
+    }
+    tempNode.next = newNode;
+    
+    // this.root = newNode;
     this.length++;
+    return this.length
 
 }
 
@@ -55,16 +62,6 @@ LList.prototype.delStart = function() {
 }
 
 LList.prototype.delEnd = function() {
-    if(!this.root) {
-        return null
-    } else {
-        let value = this.root.value;
-        this.root = this.root.next;
-    }
-    if(this.head) {
-
-    }
-    this.length--;
 }
 
 LList.prototype.delPos = function(index) {
@@ -120,23 +117,7 @@ LList.prototype.halfReverse = function() {
 }
 
 
-/////
 
+const Llist = new LList([11, 2, 43, 14, 25]);
 
-// function List(params) {
-
-// }
-
-
-// module.exports = function List(arr) {
-
-// }
-
-// module.exports = {
-//     List : List
-// } // экспортируется объект, которому присвоен кдлюч List
-
-
-const Llist = new LList();
-
-console.log(Llist.init()); 
+// console.log(Llist.init()); 

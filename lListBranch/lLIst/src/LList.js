@@ -1,6 +1,6 @@
 'use strict'
 
-const List = require('../../list/list').List;
+const List = require('../../../list/list.js').List;
 const Node = require('../../node/node.js').Node;
 
 function LList (element) {

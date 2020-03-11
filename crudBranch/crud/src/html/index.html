@@ -1,63 +1,66 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Copy Me</title>
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../scss/styles.css">
-    <link rel="stylesheet" href="../scss/outlines.css">
+    <title>CRUD</title>
+    <link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- <link rel="stylesheet" href="../scss/outlines.css"> -->
 </head>
+
 <body>
-    <section id="root" class="crud-block">
-        <h1 class="crud-block__title title"><span class="title__upper">Crud</span> Database</h1>
-        <div class="inputs">
-            <form class="form">
-            <label for="id">ID</label>
-                <input type="text" id="id" name="id" value="">
-            </form>
-            <form class="form">
-            <label for="first-name">First Name</label>
-                <input type="text" id="first-name" name="first-name" value="">
-            </form>
-            <form class="form">
-            <label for="last-name">Last Name</label>
-                <input type="text" id="last-name" name="last-name" value="">
-            </form>
-            <form class="form">
-            <label for="age">Age</label>
-                <input type="text" id="age" name="age" value="">
-            </form>
-            <form class="form">
-                <label for="age">E-Mail</label>
-                    <input type="text" id="age" name="age" value="">
-                </form>
-                <form class="form">
-                    <label for="age">Phone</label>
-                        <input type="text" id="age" name="age" value="">
-                    </form>
+    <section id="root" class="crud">
+        <h1 class="crud__title title"><span class="title__upper">Crud</span> Database</h1>
+        <div class="inputs-buttons-wrapper">
+        <div class="radio-buttons">
+            <label class="radio-buttons__label" for="localstorage">Localstorage
+                <input class="radio-buttons__radio localstorage-radio" type="radio" name="storage" id="localstorage">
+            </label>
+            <label class="radio-buttons__label" for="indexedDB">indexedDB
+                <input class="radio-buttons__radio indexedDB-radio" type="radio" name="storage" id="indexedDB">
+            </label>
         </div>
-        <div class="buttons">
-            <input class="button create-button" type="button" value="Create" id="createBut">
-            <input class="button update-button" type="button" value="Update" id="updateBut">
-            <input class="button delete-button" type="button" value="Delete" id="deleteBut">
+     <div class="wrapper crud__wrapper">
+        <div class="crud__inputs inputs">
+            <label class="crud__label label">ID
+                <input class="crud__input input crud__id" type="text" id="id" name="id" value="" placeholder="Your ID">
+            </label>
+            <label class="crud__label label">First Name
+                <input class="crud__input input crud__first-name" type="text" id="first-name" name="first-name" value="" placeholder="Your first name">
+            </label>
+            <label class="crud__label label">Last name
+                <input class="crud__input input crud__last-name" type="text" id="last-name" name="last-name" value="" placeholder="Your last name">
+            </label>
+            <label class="crud__label label">Age
+                <input class="crud__input input crud__age" type="text" id="age" name="age" value="" placeholder="Your age">
+            </label>
+            <label class="crud__label label">E-Mail
+                <input class="crud__input input crud__email" type="text" id="e-mail" name="e-mail" value="" placeholder="Your e-mail">
+            </label>
+            <label class="crud__label label">Phone
+                <input class="crud__input input crud__phone" type="text" id="phone" name="phone" value="" placeholder="Your phone">
+            </label>
         </div>
-        <div class="crud-table">
-            <ul class="crud-table__nav">
-                <li class="row">
-                    <div class="col c25 first-row-text id-cell">ID</div>
-                    <div class="col c25 first-row-text first-name-cell">First Name</div>
-                    <div class="col c25 first-row-text last-nam-celle">Last Name</div>
-                    <div class="col c25 first-row-text age-cell">Age</div>
-                    <div class="col c25 first-row-text age-cell">E-Mail</div>
-                    <div class="col c25 first-row-text age-cell">Phone</div>
+        <div class="crud__buttons buttons">
+            <input class="button buttons__create-button" type="button" value="Create" id="createBut">
+            <input class="button buttons__update-button" type="button" value="Update" id="updateBut">
+            <input class="button buttons__delete-button" type="button" value="Delete" id="deleteBut">
+        </div>
+    </div>
+</div>
 
-
+        <section class="crud__table table">
+            <ul class="table__nav">
+                <li class="table__list">
+                    <div class="first-row-text id-cell">ID</div>
+                    <div class="first-row-text first-name-cell">First Name</div>
+                    <div class="first-row-text last-name-cell">Last Name</div>
+                    <div class="first-row-text age-cell">Age</div>
+                    <div class="first-row-text email-cell">E-Mail</div>
+                    <div class="first-row-text phone-cell">Phone</div>
                 </li>
             </ul>
-            <ul class="crud-table__data"></ul>
-            <input type="radio">Localstorage
-            <input type="radio">indexDB
-
-        </div>
+        </section>
     </section>
     </div>
     <script>
@@ -66,12 +69,10 @@
         // div.innerHTML = "Привет";
         // var root = document.getElementById("root");
         // root.append(div);
-        
-
-        
     </script>
 
-	<!-- Scripts -->
-	<script src="js/index.js"></script>
+    <!-- Scripts -->
+    <script src="../js/index.js"></script>
 </body>
+
 </html>

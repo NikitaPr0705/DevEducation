@@ -1,4 +1,4 @@
-const List = require('../../../../list branch/list/list').List;
+const List = require('../../../../list/list.js').List;
 
 function AList(array) {
 
@@ -161,14 +161,15 @@ AList.prototype.max = function() { //  максимальный элемент �
 }
 
 AList.prototype.sort = function() { // сортировка по значению от меньшего к большему
-
+    debugger
     let arrLength = this.size();
     for (let i = 0; i < arrLength-1; i++) {
        let minElemOfArr = i;
        for (let nextIndexOfArr = i + 1; nextIndexOfArr < arrLength; nextIndexOfArr++) {
-            if (this.arr[nextIndexOfArr] < this.arr[minElemOfArr])
+            if (this.arr[nextIndexOfArr] < this.arr[minElemOfArr]) {
             minElemOfArr = nextIndexOfArr;
-        }
+            }
+        };
        let tempMinEl = this.arr[minElemOfArr];
        this.arr[minElemOfArr] = this.arr[i];
        this.arr[i] = tempMinEl;

@@ -29,14 +29,20 @@ LList.prototype.addStart = function(value) {
 LList.prototype.init = function() {
     let i = 0;
     while(this.defaultValue[i] !== undefined) {
-        debugger
         this.addStart(this.defaultValue[i]);
         i++;
     }
 };
 
 LList.prototype.size = function() {
-    return this.length;
+    debugger
+    let counter = 0;
+    let tempArray = this.root;
+    while(tempArray.next) {
+        counter++;
+    }
+    return counter;
+    // return this.length;
 }
 
 LList.prototype.addEnd = function(value) {
@@ -46,10 +52,8 @@ LList.prototype.addEnd = function(value) {
         tempNode = tempNode.next;
     }
     tempNode.next = newNode;
-    
-    // this.root = newNode;
     this.length++;
-    return this.length
+    return this.length;
 
 }
 
@@ -120,4 +124,4 @@ LList.prototype.halfReverse = function() {
 
 const Llist = new LList([11, 2, 43, 14, 25]);
 
-// console.log(Llist.init()); 
+console.log(Llist.size()); 

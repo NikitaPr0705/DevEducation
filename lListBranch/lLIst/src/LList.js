@@ -44,6 +44,7 @@ LList.prototype.size = function() {
 }
 
 LList.prototype.addEnd = function(value) {
+    debugger
     const newNode = new Node(value);
     let tempNode = this.root;
     while(tempNode.next !== null) {
@@ -51,8 +52,7 @@ LList.prototype.addEnd = function(value) {
     }
     tempNode.next = newNode;
     this.length++;
-    return this.length;
-
+    return this.value;
 }
 
 LList.prototype.addPos = function(index, value) {
@@ -71,6 +71,24 @@ LList.prototype.delEnd = function() {
     // let tempList = this.root;
     // this.length--
     // return this.length;
+    if(this.root.next) {
+        this.root = this.root.next;
+    } else {
+        return null
+    }
+    this.length--;
+    return this.value;
+}
+
+LList.prototype.delEnd =function() {
+    debugger
+    let tempNode = this.root;
+    while(tempNode.next !== null) {
+        tempNode = tempNode.next;
+    }
+    tempNode.value = null;
+    this.length--
+    return this.value;
 }
 
 LList.prototype.delPos = function(index) {
@@ -137,4 +155,5 @@ LList.prototype.halfReverse = function() {
 
 const Llist = new LList([11, 2, 43, 14, 25]);
 
-console.log(Llist.clear());
+
+console.log(Llist.delEnd());

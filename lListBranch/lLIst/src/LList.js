@@ -35,14 +35,12 @@ LList.prototype.init = function() {
 };
 
 LList.prototype.size = function() {
-    debugger
     let counter = 0;
     let tempArray = this.root;
     while(tempArray.next) {
         counter++;
     }
     return counter;
-    // return this.length;
 }
 
 LList.prototype.addEnd = function(value) {
@@ -62,10 +60,17 @@ LList.prototype.addPos = function(index, value) {
 }
 
 LList.prototype.delStart = function() {
-    this.length--;
+    if(this.root.next !== null) {
+        this.root = this.root.next;
+        this.length--;
+    }
+    return this.root;
 }
 
 LList.prototype.delEnd = function() {
+    // let tempList = this.root;
+    // this.length--
+    // return this.length;
 }
 
 LList.prototype.delPos = function(index) {
@@ -85,15 +90,23 @@ LList.prototype.toString = function() {
 }
 
 LList.prototype.toArray = function() {
-
+    
 }
 
 LList.prototype.clear = function() {
-
+    this.root = null;
+    this.length = 0;
+    this.init(this.defaultValue);
 }
 
 LList.prototype.min = function() {
-
+    debugger
+    let tempList = this.root;
+    let minElem;
+    while(tempList.next !== null) {
+        
+    }
+    return minElem.value;
 }
 
 LList.prototype.max = function() {
@@ -105,7 +118,8 @@ LList.prototype.sort = function() {
 }
 
 LList.prototype.minIndex = function() {
-
+    
+    return this.minInd.value;
 }
 
 LList.prototype.maxIndex = function() {
@@ -124,4 +138,4 @@ LList.prototype.halfReverse = function() {
 
 const Llist = new LList([11, 2, 43, 14, 25]);
 
-console.log(Llist.size()); 
+console.log(Llist.clear()); 

@@ -91,7 +91,7 @@
     color: orange; }
   
   .crud__last-name {
-    color: yellow; }
+    color: purple; }
   
   .crud__age {
     color: green; }
@@ -151,6 +151,11 @@
     border-bottom: 2px solid #dee2e6;
     padding: 15px 0; }
   
+  .table__item {
+    font-size: 24px;
+    color: green;
+    font-weight: bold;
+  }
   .radio-buttons {
     width: 100%;
     max-width: 200px;
@@ -180,6 +185,10 @@
     font-weight: 600;
     color: black; }
   
+    .first-row-text--normal-font {
+      font-weight: 400;
+    }
+
   .id-cell {
     width: 100%;
     max-width: 85px;

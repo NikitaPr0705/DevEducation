@@ -90,7 +90,7 @@ LList.prototype.toString = function() {
 }
 
 LList.prototype.toArray = function() {
-    
+
 }
 
 LList.prototype.clear = function() {
@@ -104,7 +104,7 @@ LList.prototype.min = function() {
     let tempList = this.root;
     let minElem;
     while(tempList.next !== null) {
-        
+
     }
     return minElem.value;
 }
@@ -118,8 +118,7 @@ LList.prototype.sort = function() {
 }
 
 LList.prototype.minIndex = function() {
-    
-    return this.minInd.value;
+    // return this.minInd.value;
 }
 
 LList.prototype.maxIndex = function() {
@@ -138,4 +137,4 @@ LList.prototype.halfReverse = function() {
 
 const Llist = new LList([11, 2, 43, 14, 25]);
 
-console.log(Llist.clear()); 
+console.log(Llist.clear());

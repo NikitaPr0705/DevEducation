@@ -179,13 +179,14 @@
     flex-direction: row;
     text-align: center; }
   
-  .first-row-text {
+  .first-row-text,
+  .row-text {
     text-align: left;
     font-size: 16px;
     font-weight: 600;
     color: black; }
   
-    .first-row-text--normal-font {
+    .row-text--normal-font {
       font-weight: 400;
     }
 
@@ -194,11 +195,11 @@
     max-width: 85px;
     padding-left: 15px; }
   
-  .first-name-cell {
+  .firstname-cell {
     width: 100%;
     max-width: 220px; }
   
-  .last-name-cell {
+  .lastname-cell {
     width: 100%;
     max-width: 220px; }
   

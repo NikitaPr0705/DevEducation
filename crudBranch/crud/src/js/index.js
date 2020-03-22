@@ -1,7 +1,8 @@
 'use strict'
 
-const lsRadio = document.querySelector('.localstorage-radio');
-const indexDbRadio = document.querySelector('.indexedDB-radio');
+
+const locStorRadio = document.querySelector('.localstorage-radio');
+const indexedDbRadio = document.querySelector('.indexedDB-radio');
 
 const allInputs = document.querySelectorAll('.crud__input');
 
@@ -11,6 +12,8 @@ const createButton = document.querySelector('.buttons__create-button');
 const updateButton = document.querySelector('.buttons__update-button');
 const deleteButton = document.querySelector('.buttons__delete-button');
 
+const lsData = JSON.parse(localStorage.getItem('user-data'));
+let indDB = false;
 
 
 const userDataArray = []; // массив объектов (юзеров в таблице)
@@ -19,14 +22,14 @@ function clearFields() { // очистка полей после ввода
     for(let i = 0; i < allInputs.length; i++) {
         allInputs[i].value = '';
     }
-}
+};
 
 function putInDock(line, objArray) {
-    debugger
     for(let key in objArray) {
         line.innerHTML += `<div class="row-text row-text--normal-font ${key}-cell">${objArray[key]}</div>`
     }
-}
+};
+
 
 function pushDataToTable(arr) {
     const userData = function() {
@@ -42,6 +45,7 @@ function pushDataToTable(arr) {
     return user;
 };
 
+
 createButton.addEventListener('click', () => {
         if(allInputs[0].value == '' || allInputs[1].value == '' || allInputs[2].value == '' || allInputs[3].value == '' || allInputs[4].value == '' || allInputs[5].value == '') {
         clearFields();
@@ -55,13 +59,13 @@ createButton.addEventListener('click', () => {
         rowLine.className = 'table__list';
         putInDock(rowLine, person);
         list.append(rowLine);
+        setToLocal();
         clearFields();
         console.log(userDataArray);
 });
 
 
 updateButton.addEventListener('click', () => {
-    debugger
     const user = pushDataToTable(allInputs);
     const rows = document.querySelectorAll('.table__list');
 
@@ -74,11 +78,11 @@ updateButton.addEventListener('click', () => {
             }
                     rows[i + 1].innerHTML = '';
                     putInDock(rows[i + 1], userDataArray[i]);
+                    setToLocal()
         }
     console.log(userDataArray);
     }
 });
-
 
 deleteButton.addEventListener('click', () => {
     const rows = document.querySelectorAll('.table__list');
@@ -90,3 +94,24 @@ deleteButton.addEventListener('click', () => {
         }
     }
 });
+
+
+locStorRadio.addEventListener('click', () => {
+    indDB = false;
+    console.log('Locstor clicked');
+  
+    // putInDock();
+});
+
+function setToLocal() {
+    putInDock();
+    localStorage.setItem('user-data', JSON.stringify(userDataArray));
+    console.log('local data was set');
+}
+
+indexedDbRadio.addEventListener('click', () => {
+    console.log('INdex clicked');
+    indDB = true;
+    // putInDock();
+})
+

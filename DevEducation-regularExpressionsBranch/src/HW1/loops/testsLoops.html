@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- подключаем стили Mocha, для отображения результатов -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+    <!-- подключаем библиотеку Mocha -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+
+    <!-- настраиваем Mocha: предстоит BDD-тестирование -->
+    <script>
+        mocha.setup('bdd');
+    </script>
+    <!-- подключаем chai -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+    <!-- в chai есть много всего, выносим assert в глобальную область -->
+    <script>
+        var assert = chai.assert;
+    </script>
+
+    <script src="task1.js"></script>
+    <script src="task2.js"></script>
+    <script src="task3.js"></script>
+    <script src="task4.js"></script>
+    <script src="task5.js"></script>
+    <script src="task6.js"></script>
+</head>
+
+<body>
+
+
+    <!-- в элементе с id="mocha" будут результаты тестов -->
+    <div id="mocha"></div>
+    <!-- запустить тесты! -->
+
+    <script>
+        describe("Loops/task 1", function () {
+            it("Задание 1: посчитать сумму нечетных элементов массива и их количество", function () {
+                assert.equal(countSumEvenNum(), 'Summ: 2450, quantity: 49');
+            });
+        });
+
+        describe("Loops/task 2: простое число", function () {
+            it("Задание 2: вводим 0", function () {
+                assert.equal(getSimpleNum(0), 'Simple');
+            });
+            it("Задание 2: вводим 20", function () {
+                assert.equal(getSimpleNum(20), 'Not Simple');
+            });
+            it("Задание 2: вводим -20", function () {
+                assert.equal(getSimpleNum(-20), 'Simple');
+            });
+            it("Задание 2: вводим 2.4", function () {
+                assert.equal(getSimpleNum(2.4), 'Simple');
+            });
+            it("Задание 2: вводим true", function () {
+                assert.equal(getSimpleNum(true), 'Simple');
+            });
+            it("Задание 2: вводим false", function () {
+                assert.equal(getSimpleNum(false), 'Simple');
+            });
+            it("Задание 2: вводим null", function () {
+                assert.equal(getSimpleNum(null), 'Simple');
+            });
+        });
+
+        describe("Loops/task 4: факториал", function () {
+            it("Задание 4: вводим 20", function () {
+                assert.equal(countFactorial(20), 2432902008176640000);
+            });
+            it("Задание 4: вводим 2", function () {
+                assert.equal(countFactorial(2), 2);
+            });
+            it("Задание 4: вводим -20", function () {
+                assert.equal(countFactorial(-20), 1);
+            });
+            it("Задание 4: вводим 100", function () {
+                assert.equal(countFactorial(100), 9.33262154439441e+157);
+            });
+            it("Задание 4: вводим 4.55", function () {
+                assert.equal(countFactorial(4.55), 24);
+            });
+            it("Задание 4: вводим true", function () {
+                assert.equal(countFactorial(true), 1);
+            });
+        });
+
+
+        describe("Loops/task 5: сумма префиксов заданого числа", function () {
+            it("Задание 4: вводим 20", function () {
+                assert.equal(task5CountSumOfNum(234454), 22);
+            });
+            it("Задание 4: вводим 2", function () {
+                assert.equal(task5CountSumOfNum(2344), 13);
+            });
+            it("Задание 4: вводим 100", function () {
+                assert.equal(task5CountSumOfNum(100), 1);
+            });
+        });
+
+        describe("Loops/task 6: реверс числа", function () {
+            it("Задание 6: вводим [12345]", function () {
+                assert.deepEqual(task6ReverseNumb([12345]), 54321);
+            });
+            it("Задание 6: вводим [2344]", function () {
+                assert.deepEqual(task6ReverseNumb([2344]), 4432);
+            });
+            it("Задание 6: вводим [100]", function () {
+                assert.deepEqual(task6ReverseNumb([100]), 1);
+            });
+        });
+    </script>
+
+
+
+    <script>
+        mocha.run();
+    </script>
+
+</body>
+
+</html>

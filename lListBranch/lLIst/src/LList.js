@@ -18,6 +18,7 @@ LList.prototype = Object.create(List.prototype);
 LList.prototype.constructor = LList;
 
 LList.prototype.addStart = function(value) {
+
     const newNode = new Node(value);
 
     newNode.next = this.root;
@@ -60,17 +61,6 @@ LList.prototype.addPos = function(index, value) {
 }
 
 LList.prototype.delStart = function() {
-    if(this.root.next !== null) {
-        this.root = this.root.next;
-        this.length--;
-    }
-    return this.root;
-}
-
-LList.prototype.delEnd = function() {
-    // let tempList = this.root;
-    // this.length--
-    // return this.length;
     if(this.root.next) {
         this.root = this.root.next;
     } else {
@@ -81,7 +71,7 @@ LList.prototype.delEnd = function() {
 }
 
 LList.prototype.delEnd =function() {
-    debugger
+    debugger 
     let tempNode = this.root;
     while(tempNode.next !== null) {
         tempNode = tempNode.next;

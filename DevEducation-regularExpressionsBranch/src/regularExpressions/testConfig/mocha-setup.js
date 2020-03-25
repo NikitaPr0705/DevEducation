@@ -1,5 +1,5 @@
 require('raf/polyfill');
 require('@babel/register');
-require('./dom');
+// require('./dom');
 require('./helpers');
 require('esm');

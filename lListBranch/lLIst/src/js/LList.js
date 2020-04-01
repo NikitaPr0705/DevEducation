@@ -1,7 +1,7 @@
 'use strict'
 
-const List = require('../../../list/list.js').List;
-const Node = require('../../node/node.js').Node;
+const List = require('../../../../list/list.js').List;
+const Node = require('../../../node/node.js').Node;
 
 function LList (element) {
     List.apply(this, arguments);// обращение к функции-конструктору родителя и достает все свойства и аргументы
@@ -143,7 +143,7 @@ LList.prototype.halfReverse = function() {
 
 
 
-const Llist = new LList([11, 2, 43, 14, 25]);
+// const Llist = new LList([11, 2, 43, 14, 25]);
 
 
-console.log(Llist.delEnd());
+// console.log(Llist.delEnd());

@@ -1,6 +1,6 @@
-const { AList } = require('../AList');
+const { LList } = require('../LList');
 
-let testArray = new AList([35, 89, 54, 39, 12]);
+let testArray = new LList([35, 89, 54, 39, 12]);
 
 describe('addStartTest', function () {
     it('input 24', function () {

@@ -1,6 +1,5 @@
 const {} = require('../regExp');
 
-// let testArray = new AList([35, 89, 54, 39, 12]);
 
 describe('Task 1', function () {
     it('Вернуть а, любой символ, b', function () {
@@ -182,20 +181,252 @@ describe('Task 30', function () {
     });
 });
 
-// describe('Task 31', function () {
-//     it('Найти строки следующего вида: по краям стоят буквы w, а между ними - буква кириллицы', function () {
-//         assert.deepEqual(task31('wйw wяw wёw wqw'), ['wйw', 'wяw', 'wёw'])
-//     });
-// });
+describe('Task 31', function () {
+    it('Найти строки следующего вида: по краям стоят буквы w, а между ними - буква кириллицы', function () {
+        assert.deepEqual(task31('wйw wяw wёw wqw'), ['wйw', 'wяw', 'wёw'])
+    });
+});
 
-// describe('Task 32', function () {
-//     it('Найти строки следующего вида: по краям стоят буквы a, а между ними - маленькие латинские буквы, не затронув остальных', function () {
-//         assert.deepEqual(task32('aAXa aeffa aGha aza ax23a a3sSa'), ['aeffa', 'aza'])
-//     });
-// });
+describe('Task 32', function () {
+    it('Найти строки следующего вида: по краям стоят буквы a, а между ними - маленькие латинские буквы, не затронув остальных', function () {
+        assert.deepEqual(task32('aAXa aeffa aGha aza ax23a a3sSa'), ['aeffa', 'aza'])
+    });
+});
 
-// describe('Task 30', function () {
-//     it('Найти строки следующего вида: по краям стоят буквы a, а между ними - не e и не x', function () {
-//         assert.deepEqual(task27('aba aea aca aza axa a-a a#a'), ['aba', 'aсa', 'aza', 'aca', 'a-a', 'a#a'])
-//     });
-// });
+describe('Task 33', function () {
+    it('Найти строки следующего вида: по краям стоят буквы a, а между ними - маленькие и большие латинские буквы, не затронув остальных.', function () {
+        assert.deepEqual(task33('aAXa aeffa aGha aza ax23a a3sSa'), ['aAXa', 'aeffa', 'aGha', 'aza'])
+    });
+});
+
+describe('Task 34', function () {
+    it('Найти строки следующего вида: по краям стоят буквы a, а между ними - маленькие латинские буквы и цифры, не затронув остальных..', function () {
+        assert.deepEqual(task34('aAXa aeffa aGha aza ax23a a3sSa'), [ 'aeffa', 'aza', 'ax23a'])
+    });
+});
+
+describe('Task 35', function () {
+    it('Найти все слова по шаблону: любая кириллическая буква любое количество раз.', function () {
+        assert.deepEqual(task35('ааа ббб ёёё ззз ййй ААА БББ ЁЁЁ ЗЗЗ ЙЙЙ'), [ 'ааа', 'ббб', 'ёёё', 'ззз', 'ййй', 'ААА', 'БББ', 'ЁЁЁ', 'ЗЗЗ', 'ЙЙЙ'])
+    });
+});
+
+describe('Task 36', function () {
+    it('Заменить первое aaa на !', function () {
+        assert.equal(task36('aaa aaa aaa'), [ '! aaa aaa'])
+    });
+});
+
+describe('Task 37', function () {
+    it('Заменить последнее aaa на !', function () {
+        assert.equal(task37('aaa aaa aaa'), [ 'aaa aaa !'])
+    });
+});
+
+describe('Task 38', function () {
+    it('Найти строки следующего вида: по краям стоят буквы a, а между ними - или буква e любое количество раз или по краям стоят буквы a, а между ними - буква x любое количество раз', function () {
+        assert.deepEqual(task38('aeeea aeea aea axa axxa axxxa'), [ 'aeeea', 'aeea', 'aea', 'axa', 'axxa', 'axxxa'])
+    });
+});
+
+describe('Task 39', function () {
+    it('Найти строки следующего вида: по краям стоят буквы a, а между ними - или буква e два раза или буква x любое количество раз', function () {
+        assert.deepEqual(task39('aeeea aeea aea axa axxa axxxa'), ['aeea', 'axa', 'axxa', 'axxxa'])
+    });
+});
+
+
+describe('Task 40', function () {
+    it('Заменить строку a\\a на !', function () {
+        assert.equal(task40('a\\a abc'), '! abc')
+    });
+});
+
+describe('Task 41', function () {
+    it('Заменить строку a\\a на !', function () {
+        assert.equal(task41('a\\a a\\\\a a\\\\\\a'), 'a\\a a\\\\a !')
+    });
+});
+
+describe('Task 42', function () {
+    it('Заменить содержимое всех конструкций /...\ и заменит их на !', function () {
+        assert.equal(task42('bbb \/aaa\\ bbb \/ccc\\'), 'bbb ! bbb !')
+    });
+});
+
+describe('Task 43', function () {
+    it('Заменить строки по шаблону: любое количество букв и цифр, символ @, любое количество букв и цифр и поменяет местами то, что стоит до @ на то, что стоит после нее. Например, aaa@bbb должно превратиться в bbb@aaa', function () {
+        assert.equal(task43('aaa@bbb eee7@kkk'), 'bbb@aaa kkk@eee7')
+    });
+});
+
+describe('Task 44', function () {
+    it('Найти все цифры и удвоит их количество таким образом: a11b22c33 (то есть рядом с каждой цифрой напишет такую же).', function () {
+        assert.equal(task44('a1b2c3'), ['a11b22c33'])
+    });
+});
+
+describe('Task 45', function () {
+    it('Определить, что переданная строка является емэйлом', function () {
+        assert.equal(task45('mymail@mail.ru, my.mail@mail.ru, my-mail@mail.ru, my_mail@mail.ru, mail@mail.com, mail@mail.by, mail@yandex.ru'), true)
+    });
+});
+
+describe('Task 46', function () {
+    it('Найти все емэйлы в виде массива', function () {
+        assert.deepEqual(task46('mymail@mail.ru, my.mail@mail.ru, my-mail@mail.ru, my_mail@mail.ru, mail@mail.com, mail@mail.by, mail@yandex.ru'), ['mymail@mail.ru', 'my.mail@mail.ru', 'my-mail@mail.ru', 'my_mail@mail.ru', 'mail@mail.com', 'mail@mail.by', 'mail@yandex.ru'])
+    });
+});
+
+describe('Task 47', function () {
+    it('Определить, что переданная строка является доменом.', function () {
+        assert.deepEqual(task47('site.ru, site.com, my-site.com'), true)
+    });
+});
+
+describe('Task 48', function () {
+    it('Определить, что переданная строка является доменом.', function () {
+        assert.deepEqual(task48('http://site.ru, http://site.com'), true)
+    });
+});
+
+describe('Task 49', function () {
+    it('Определить, что переданная строка является доменом вида http://site.ru. Протокол может быть как http, так и https', function () {
+        assert.deepEqual(task49('http://site.ru, https://site.com'), true)
+    });
+});
+
+describe('Task 50', function () {
+    it('Определить, что переданная строка начинается с http или с https.', function () {
+        assert.deepEqual(task50('http://site.ru, https://site.com'), true)
+    });
+});
+
+describe('Task 51', function () {
+    it('Определить, что переданная строка заканчивается расширением txt, html или php.', function () {
+        assert.deepEqual(task51('site.txt, site.html, test.php'), true)
+    });
+});
+
+describe('Task 52', function () {
+    it('Определить, что переданная строка заканчивается расширением jpg или jpeg.', function () {
+        assert.deepEqual(task52('site.jpg, test.jpeg'), true)
+    });
+});
+
+describe('Task 53', function () {
+    it('Узнайть является ли строка числом, длиной до 12 цифр.', function () {
+        assert.deepEqual(task53('123456789012'), true)
+    });
+});
+
+describe('Task 54', function () {
+    it('Найдите сумму всех чисел из данной строки.', function () {
+        assert.equal(task54('2343 dfdf42 02323df'), ['28'])
+    });
+});
+
+describe('Task 55', function () {
+    it('замените в строке домены вида http://site.ru, http://site.com на <a href="http://site.ru">site.ru</a>', function () {
+        assert.equal(task55('http://site.ru, http://site.com'), '<a href="http://site.ru">site.ru</a>, <a href="http://site.com">site.com</a>')
+    });
+});
+
+describe('Task 56', function () {
+    it('С помощью replace замените все повторяющиеся пробелы на один', function () {
+        assert.equal(task56('site.ru  site.com   index style     index        style index style'), ['site.ru site.com index style index style index style'])
+    });
+});
+
+describe('Task 57', function () {
+    it('Найдите и удалите все комментарии CSS', function () {
+        assert.equal(task57('/* .container { width: 100%; } */'), [' .container { width: 100%; } '])
+    });
+});
+
+describe('Task 58', function () {
+    it('Найдите и удалите все комментарии HTML', function () {
+        assert.equal(task58('<!-- <div class="row"> -->'), '<div class="row">')
+    });
+});
+
+describe('Task 59', function () {
+    it('С помощью позитивного и негативного просмотра найдите все строки по шаблону 3 буквы a, затем буква b и поменяйте 3 буквы a на знак !.', function () {
+        assert.equal(task59('aaab'), ['!b'])
+    });
+});
+
+describe('Task 60', function () {
+    it('С помощью позитивного и негативного просмотра найдите все строки по шаблону 3 буквы a, затем любая буква, но не b и поменяйте 3 буквы a на знак !', function () {
+        assert.equal(task60('aaaw aaab'), ['!w aaab'])
+    });
+});
+
+describe('Task 61', function () {
+    it('Преобразуйте строку так, чтобы вместо этих чисел стояли их квадраты', function () {
+        assert.equal(task61('2345'), '491625');
+    });
+});
+
+
+describe('Task 62', function () {
+    it('Найдите числа, стоящие в кавычках и увеличьте их в два раза', function () {
+        assert.equal(task62("2aaa'3'bbb'4'"), "2aaa'6'bbb'8'")
+    });
+});
+
+describe('Task 63', function () {
+    it('Есть вставки {{текст}}. Найдите все такие вставки и поменяйте в них порядок букв на обратный', function () {
+        assert.equal(task63('{{текст}}'), '{{тскет}}')
+    });
+});
+
+describe('Task 64', function () {
+    it('Вывести результат суммы', function () {
+        assert.equal(task64('23 + 35 ='), '23 + 35 =58')
+    });
+});
+
+describe('Task 65', function () {
+    it('Определите, что год находится в интервале от 1900 до 2100 с помощью одного только регулярного выражения', function () {
+        assert.equal(task65('1600'), false)
+    });
+    it('Определите, что год находится в интервале от 1900 до 2100 с помощью одного только регулярного выражения', function () {
+        assert.equal(task65('2200'), false)
+    });
+    it('Определите, что год находится в интервале от 1900 до 2100 с помощью одного только регулярного выражения', function () {
+        assert.equal(task65('1940'), true)
+    });
+});
+
+describe('Task 66', function () {
+    it('Oпределите, что переданная строка является корректным временем', function () {
+        assert.deepEqual(task66('12:59 23:41 00:12 00:00 09:15 24.00 25.00 12.60 12.93 41.93'), ['12:59', '23:41', '00:12', '00:00', '09:15'])
+    });
+});
+
+describe('Task 67', function () {
+    it('Определите, что переданная строка является корректным временем вида 9.59 am, 12.30 pm', function () {
+        assert.equal(task67('9.59 am, 12.30 pm'), true)
+    });
+});
+
+describe('Task 68', function () {
+    it('Удалите одной регуляркой все слова из предложения, содержащие две одинаковые следующие друг за другом буквы', function () {
+        assert.equal(task68('dd bbnb aaaa aaar hghf nmcn adff'), 'hghf nmcn')
+    });
+});
+
+describe('Task 69', function () {
+    it('Удалите одной регуляркой все повторяющиеся слова из строки', function () {
+        assert.equal(task69('dsf xxx xxx sd'), 'dsf xxx sd')
+    });
+});
+
+describe('Task 70', function () {
+    it('Решите предыдущую задачу с учетом того, что слово может повторяться много раз', function () {
+        assert.equal(task70('dsf xxx xxx xxx xxx xxx sd'), 'dsf xxx sd')
+    });
+});
+
+
